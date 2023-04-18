@@ -11,7 +11,7 @@
   position: absolute;
   top: 25%;
   left: 4%;
-  color: rgba(55, 198, 255, 0.788);
-  font-size: 35px;
+  font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1.3px 1px 1px black;
 }
