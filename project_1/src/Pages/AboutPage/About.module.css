@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.mainContainer {
+  border: 2px solid;
+  background: url("https://s1.dmcdn.net/v/PrHOg1SqcQ70CxHn9/x1080") no-repeat
+    center/cover;
+}
+
 .Container1 {
   display: flex;
   justify-content: space-around;
