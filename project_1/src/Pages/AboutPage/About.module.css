@@ -1,0 +1,72 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.Container1{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 80px;
+}
+
+.Container2{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+    height: 65vh;
+}
+
+.box {
+    width: 30vw;
+    font-size: 20px;
+    font-family: 'Hubballi', cursive;
+    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    /* color: white; */
+}
+
+.box1 {
+    border: 2px solid;
+    width: 20vw;
+    height: 45vh;
+}
+
+.lists {
+    width: 25vw;
+    height: 45vh;
+}
+
+.points {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0px 10px 0px;
+    /* color: white; */
+}
+
+
+.pointsDec {
+    list-style: none;
+    font-family: 'Hubballi', cursive;
+    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    /* color: white; */
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    position: relative;
+    top: 35px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h1{
+    color: red;
+    margin-bottom: 15px;
+}
