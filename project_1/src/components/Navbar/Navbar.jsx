@@ -2,8 +2,13 @@ import React from "react"
 import styled from "./Navbar.module.css"
 
 import {Link } from "react-router-dom"
+import Button from "../Button/Button"
 const Navbar=()=> {
 
+    const btnClicked=()=> {
+        // alert("btn clicked")
+        console.log("clicked")
+    }
     return (
         <div className={styled.navbar_container}>
 
@@ -22,7 +27,7 @@ const Navbar=()=> {
             </div>
 
             <div className={styled.navbtn}>
-      <h2>btn</h2>
+        <Button btnName="Join Us" btnClicked={btnClicked} />
             </div>
 
         </div>
