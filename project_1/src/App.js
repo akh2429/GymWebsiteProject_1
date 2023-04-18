@@ -12,22 +12,24 @@ import Registration from './components/Registration/Registration';
 
 import Footer from './components/Footer/footer';
 function App() {
-  return (
-    <div className="App">
+    return (
+        <div className="App">
 
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/AboutUs' element={<About />} />
-        <Route path='/Program' element={<Program />} />
-        <Route path='/Training' element={<Training />} />
-        <Route path='/Pricing' element={<Pricing />} />
-        <Route path='/register' element={<Registration />} />
-        <Route path='/login' element={<Login />} />
-      </Routes>
-      <Footer />
-    </div>
-  );
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/AboutUs' element={<About />} />
+                <Route path='/Program' element={<Program />} />
+                <Route path='/Training' element={<Training />} />
+                <Route path='/Pricing' element={<Pricing />} />
+                <Route path='/register' element={<Registration />} />
+                <Route path='/login' element={<Login />} />
+            </Routes>
+            <Footer />
+        </div>
+    );
 }
+
+export default App;
 
 export default App;
