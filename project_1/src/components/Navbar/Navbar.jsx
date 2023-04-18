@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "./Navbar.module.css"
-
+ import{useNavigate} from "react-router-dom"
 import {Link } from "react-router-dom"
 import Button from "../Button/Button"
 const Navbar=()=> {
-
+ const navigate = useNavigate()
     const btnClicked=()=> {
-        // alert("btn clicked")
-        console.log("clicked")
+        //console.log("btnclickone")
+        navigate("/login")
     }
     return (
         <div className={styled.navbar_container}>
@@ -27,7 +27,7 @@ const Navbar=()=> {
             </div>
 
             <div className={styled.navbtn}>
-        <Button btnName="Join Us" btnClicked={btnClicked} />
+        <Button btnName="Join Us" onClick={btnClicked} />
             </div>
 
         </div>
