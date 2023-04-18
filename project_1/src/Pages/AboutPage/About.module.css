@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+.mainContainer{
+    border: 2px solid;
+    background: url("https://s1.dmcdn.net/v/PrHOg1SqcQ70CxHn9/x1080") no-repeat center/cover;
+}
+
 .Container1{
     display: flex;
     justify-content: space-around;
@@ -23,7 +28,7 @@
     font-family: 'Hubballi', cursive;
     font-family: 'Lora', serif;
     font-family: 'Playfair Display', serif;
-    /* color: white; */
+    color: white;
 }
 
 .box1 {
@@ -41,7 +46,7 @@
     font-weight: bold;
     font-size: 20px;
     margin: 10px 0px 10px 0px;
-    /* color: white; */
+    color: #0D47A1;
 }
 
 
@@ -51,7 +56,7 @@
     font-family: 'Lora', serif;
     font-family: 'Playfair Display', serif;
     font-size: 20px;
-    /* color: white; */
+    color: white;
 }
 
 .btn{
@@ -59,14 +64,26 @@
     height: 40px;
     position: relative;
     top: 35px;
-    background-color: red;
+    background-color: #0D47A1;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
 }
 
-h1{
-    color: red;
+.h1{
+    color: #0D47A1;
     margin-bottom: 15px;
+}
+
+.video{
+    border: 3px solid#EEEEEE;
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 526px;
+    height: 256px;
+}
+
+.iframe{
+    border-radius: 15px;
 }
