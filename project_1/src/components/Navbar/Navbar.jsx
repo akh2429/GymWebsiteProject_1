@@ -1,19 +1,21 @@
 import React from "react";
-import { BiDumbbell } from "react-icons/bi";
 import styled from "./Navbar.module.css";
+import { BiDumbbell } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
-import "./Navbar.module.css";
-
 const Navbar = () => {
+  const navigate = useNavigate();
   const btnClicked = () => {
-    // alert("btn clicked")
-    console.log("clicked");
+    //console.log("btnclickone")
+    navigate("/login");
   };
   return (
     <div className={styled.navbar_container}>
       <div className={styled.navlogo}>
-        <BiDumbbell />
+        <div className={styled.navlogo}>
+          <BiDumbbell />
+        </div>
       </div>
       <div className={styled.navlink_container}>
         <ul className={styled.navlink}>
@@ -51,7 +53,7 @@ const Navbar = () => {
       </div>
 
       <div className={styled.navbtn}>
-        <Button btnName="Join Us" btnClicked={btnClicked} />
+        <Button btnName="Join Us" onClick={btnClicked} />
       </div>
     </div>
   );
