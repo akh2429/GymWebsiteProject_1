@@ -6,7 +6,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 0.9px 0.2px 0.2px rgb(117, 112, 112);
+  background-color: rgba(255, 255, 255, 0.164);
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 .navlogo {
   margin-top: 20px;
