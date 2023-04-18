@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from "./Registration.module.css"
 import InputField from '../InputField/InputField'
 import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 const Registration = () => {
     const[fname,setFname]=useState("")
     const [username,setUserName]=useState("")
@@ -15,10 +16,10 @@ const Registration = () => {
     const[errorTxt,setErrorTxt]=useState("")
 
 
-//     const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-//   function isEmail(str) {
-//     return str.match(pattern);
-//   }
+    const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  function isEmail(str) {
+    return str.match(pattern);
+  }
 
  const handleFormSubmit=(e)=>{
     e.preventDefault()
@@ -33,16 +34,17 @@ if(fname==="" && email==="" && username==="" && password===""){
     setError(true)
     setErrorTxt("*Username contains atleast 5 Characters")
 }
-// }else if(email && isEmail(email) === null){
-//  setError(true)
-// setErrorTxt("*Invalid email")
- //}
+else if(email && isEmail(email) === null){
+ setError(true)
+setErrorTxt("*Invalid email")
+ }
  else if(password.length <6){
 setError(true)
 setErrorTxt("*Password contains atleast 6 characters")
 }else{
     setError(false);
     setErrorTxt("");
+
     const userInfo={
         fname: fname,
         username:username,
@@ -63,45 +65,30 @@ setErrorTxt("*Password contains atleast 6 characters")
 
 }
 
-    // const userInfo={
-    //     fname: fname,
-    //     username:username,
-    //     email:email,
-    //     password:password
-    // }
-
-    // userData.push(userInfo)
-    //  //console.log(userData)
-    //  setFname("")
-    //  setUserName("")
-    //  setEmail("")
-    //  setPassword("")
-
-    //  localStorage.setItem("userData", JSON.stringify(userData))
-    //  console.log(userData)
-    //  alert(`Welcome ${fname} , Registration Successfully `)
+//className={styled.mainContainer}
  }
   return (
+    <div className={styled.mainContainer}>
     <div className={styled.formContainer}>
-        <h2>JOIN WITH US</h2>
+        <h2>JoinUs Now</h2>
   <form action="" onSubmit={handleFormSubmit} >
     <div className={styled.inputField}>
-        <label htmlFor="fname">Full Name : </label>
+        <label htmlFor="fname">Full Name  </label>
         <InputField type="text" placeholder="Enter Full Name"  value={fname} onChange={(e)=> setFname(e.target.value)} />
     </div>
 
     <div className={styled.inputField}>
-        <label htmlFor="username">Username : </label>
+        <label htmlFor="username">Username  </label>
         <InputField type="text" placeholder="Enter Username"  value={username} onChange={(e)=> setUserName(e.target.value)} />
     </div>
 
     <div className={styled.inputField}>
-        <label htmlFor="email">Email : </label>
+        <label htmlFor="email">Email  </label>
         <InputField type="email" placeholder="Enter Email"  value={email} onChange={(e)=> setEmail(e.target.value)} />
     </div>
 
     <div className={styled.inputField}>
-        <label htmlFor="password">Password : </label>
+        <label htmlFor="password">Password  </label>
         <InputField type="password" placeholder="Enter Password"  value={password} onChange={(e)=> setPassword(e.target.value)} />
     </div>
  <small>{error ? <strong style={{color:"red"}}>{errorTxt}</strong> : null}</small>
@@ -109,6 +96,11 @@ setErrorTxt("*Password contains atleast 6 characters")
    <Button btnName="SignUp" />
       </div>
   </form>
+  <div className={styled.switch}>
+  <strong >Back to </strong> <Link className={styled.login} to="/login" > Login</Link> 
+  </div>
+  
+    </div>
     </div>
   )
 }

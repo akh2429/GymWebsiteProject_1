@@ -9,7 +9,6 @@ import Training from './Pages/TrainingPage/Training';
 import Pricing from './Pages/PricingPage/Pricing';
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
-import Footer from './components/Footer/footer';
 function App() {
   return (
     <div className="App">
@@ -21,9 +20,9 @@ function App() {
         <Route path='/Training' element={<Training />} />
         <Route path='/Pricing' element={<Pricing />} />
       </Routes>
-      <Footer />
-      {/* <Login /> */}
-      {/* <Registration /> */}
+
+      <Login />
+      <Registration />
     </div>
   );
 }
