@@ -21,7 +21,7 @@ function Home() {
     <div className="imageContainer">
       <img src={data[index]} alt="Image not available" className="myImage" />
       <div className="imageText">
-        <h1 style={{ color: "yellow" }}>
+        <h1 style={{ color: "white" }}>
           Take Care of your <span style={{ color: "red" }}>body.</span>
           <br /> Its the only place you <br />
           have to <span style={{ color: "red" }}>live.</span>
