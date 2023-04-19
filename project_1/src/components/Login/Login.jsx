@@ -52,4 +52,4 @@ setUserList(data)
   )
 }
 
-export default Login
+export default Login;
