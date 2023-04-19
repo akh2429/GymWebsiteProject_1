@@ -6,8 +6,8 @@
 
 .mainContainer {
   border: 2px solid;
-  background: url("https://s1.dmcdn.net/v/PrHOg1SqcQ70CxHn9/x1080") no-repeat
-    center/cover;
+  background: url("https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?cs=srgb&dl=pexels-leon-ardho-1552252.jpg&fm=jpg")
+    no-repeat center/cover;
   padding-top: 15vh;
 }
 
@@ -65,14 +65,16 @@
   height: 40px;
   position: relative;
   top: 35px;
-  background-color: red;
+  background-color: #b71c1c;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
-h1 {
-  color: red;
+.h1 {
+  color: rgb(238, 255, 0);
   margin-bottom: 15px;
+  font-size: 2.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

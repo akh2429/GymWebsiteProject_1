@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
-import myimg1 from "./img1.jpg";
+import myimg1 from "./img1.webp";
 import myimg2 from "./img2.jpeg";
 import myimg3 from "./img3.jpg";
 import myimg4 from "./img4.jpg";
-import myimg5 from "./img5.jpg";
+// import myimg5 from "./img5.jpg";
 
-const data = [myimg1, myimg2, myimg3, myimg4, myimg5];
+const data = [myimg1, myimg2, myimg3, myimg4];
 
 function Home() {
   const [index, setIndex] = useState(0);

@@ -10,11 +10,15 @@ const Navbar = () => {
     //console.log("btnclickone")
     navigate("/login");
   };
+
+  function clickHandlerlogo() {
+    navigate("/");
+  }
   return (
     <div className={styled.navbar_container}>
       <div className={styled.navlogo}>
         <div className={styled.navlogo}>
-          <BiDumbbell />
+          <BiDumbbell onClick={clickHandlerlogo} />
         </div>
       </div>
       <div className={styled.navlink_container}>

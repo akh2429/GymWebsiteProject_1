@@ -9,12 +9,12 @@ function Footer() {
   return (
     <div className={styled.footer}>
       <div className={styled.socialMedia}>
-        <span style={{ fontSize: "35px", color: "red" }}>
+        <span className={styled.footerLogo}>
           <BiDumbbell />
         </span>
         <div></div>
         <h5>Lorem ipsum dolor sit amet consectet</h5>
-        <div style={{ fontSize: "20px" }}>
+        <div className={styled.socialMediaLogo}>
           <TiSocialTwitter />
           <TiSocialFacebook />
           <TiSocialInstagram />
@@ -43,7 +43,10 @@ function Footer() {
           <li>Lorem ipsum </li>
         </ul>
       </div>
-      <div className={styled.rights}>@2023 | All rights reserved.</div>
+      <div className={styled.rights}>
+        <strong>Copyright 2023 Chisel Fitness LLP</strong> | All Rights Reserved
+        | Powered by- Function up
+      </div>
     </div>
   );
 }

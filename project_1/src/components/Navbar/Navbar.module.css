@@ -14,8 +14,9 @@
   text-decoration: dotted;
 }
 .navlogo {
+  cursor: pointer;
   margin-top: 20px;
-  color: rgba(255, 0, 0, 0.767);
+  color: #b71c1c;
   font-size: 7rem;
   text-shadow: 1rem 1rem 1rem blue;
 }
@@ -33,12 +34,7 @@
   font-size: 2rem;
   font-family: "Macondo", cursive;
 }
-li:hover {
-  font-size: 3rem;
-}
-.navlogo:hover {
-  color: rgb(0, 136, 255);
-  border: 1rem 1rem 1rem white;
-  gap: 12px;
-  font-size: 8rem;
+li .link:hover {
+  font-size: 2.2rem;
+  color: #e6e6e6;
 }
