@@ -1,162 +1,164 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 .bodyContainer {
-    background: url("https://img.freepik.com/premium-photo/portrait-bengal-cat-suppuration-eye-conjunctivitis-medication-concept-mixed-media_392761-3400.jpg") no-repeat center/cover;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    padding-top: 25px;
-    gap: 25px;
+  background: url("https://img.freepik.com/premium-photo/portrait-bengal-cat-suppuration-eye-conjunctivitis-medication-concept-mixed-media_392761-3400.jpg")
+    no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  padding-top: 25px;
+  gap: 25px;
+  padding-top: 15vh;
 }
 
 .pricingSheetContainer {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .mainContainer1 {
-    width: 20vw;
-    height: 60vh;
-    border-radius: 15px;
-    background-color: white;
-    transition: transform 0.5s ease;
+  width: 20vw;
+  height: 60vh;
+  border-radius: 15px;
+  background-color: white;
+  transition: transform 0.5s ease;
 }
 
 .mainContainer1:hover {
-    transform: scale(1.1);
-  }
+  transform: scale(1.1);
+}
 
 .mainContainer2 {
-    width: 20vw;
-    height: 60vh;
-    border-radius: 15px;
-    background-color: white;
-    transition: transform 0.5s ease;
+  width: 20vw;
+  height: 60vh;
+  border-radius: 15px;
+  background-color: white;
+  transition: transform 0.5s ease;
 }
 
 .mainContainer2:hover {
-    transform: scale(1.1);
-  }
+  transform: scale(1.1);
+}
 
 .mainContainer3 {
-    width: 20vw;
-    height: 60vh;
-    border-radius: 15px;
-    background-color: white;
-      transition: transform 0.5s ease;
+  width: 20vw;
+  height: 60vh;
+  border-radius: 15px;
+  background-color: white;
+  transition: transform 0.5s ease;
 }
 
 .mainContainer3:hover {
-    transform: scale(1.1);
-  }
+  transform: scale(1.1);
+}
 
 .container1_1 {
-    height: 136px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #6b1111;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 15px;
+  border-radius: 10px;
+  background-color: #6b1111;
 }
 
 .container1_2 {
-    height: 136px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #063029;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 15px;
+  border-radius: 10px;
+  background-color: #063029;
 }
 
 .container1_3 {
-    height: 136px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 15px;
-    border-radius: 10px;
-    background-color: #082a5e;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 15px;
+  border-radius: 10px;
+  background-color: #082a5e;
 }
 
 .container2 {
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    padding-top: 25px;
-    border-radius: 10px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding-top: 25px;
+  border-radius: 10px;
 }
 
 span {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .price {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .h1 {
-    color: rgb(152, 119, 131);
+  color: rgb(152, 119, 131);
 }
 
 .btn1 {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: #C62828;
-    cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #c62828;
+  cursor: pointer;
 }
 
 .btn1:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .btn2 {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: #004D40;
-    cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #004d40;
+  cursor: pointer;
 }
 
 .btn2:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .btn3 {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: #0D47A1;
-    cursor: pointer;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0d47a1;
+  cursor: pointer;
 }
 
 .btn3:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 p {
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Hubballi', cursive;
-    font-family: 'Lora', serif;
-    font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Hubballi", cursive;
+  font-family: "Lora", serif;
+  font-family: "Playfair Display", serif;
 }
