@@ -1,20 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
 .navbar_container {
   height: 15vh;
   width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  text-shadow: 0.9px 0.2px 0.2px rgb(117, 112, 112);
+  text-shadow: 0.9px 0.1px 0.1px rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 0.164);
   position: fixed;
   top: 0;
   z-index: 1;
+  text-decoration: dotted;
 }
 .navlogo {
   margin-top: 20px;
   color: rgba(255, 0, 0, 0.767);
   font-size: 7rem;
+  text-shadow: 1rem 1rem 1rem blue;
 }
 .navlink {
   display: flex;
@@ -25,6 +28,17 @@
 }
 .link {
   text-decoration: none;
-  color: rgb(255, 251, 0);
+  color: rgb(255, 72, 0);
   font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "Macondo", cursive;
+}
+li:hover {
+  font-size: 3rem;
+}
+.navlogo:hover {
+  color: rgb(0, 136, 255);
+  border: 1rem 1rem 1rem white;
+  gap: 12px;
+  font-size: 8rem;
 }

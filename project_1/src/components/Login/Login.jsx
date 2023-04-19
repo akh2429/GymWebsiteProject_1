@@ -43,7 +43,7 @@ const Login = () => {
   };
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("userData"));
-    console.log(data);
+    // console.log(data);
     setUserList(data);
   }, []);
 
