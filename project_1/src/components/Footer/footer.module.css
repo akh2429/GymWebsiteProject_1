@@ -15,13 +15,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.116);
-  gap: 20rem;
+  /* background-color: rgba(250, 0, 0, 0.603); */
+  /* gap: 20rem; */
   color: rgb(8, 8, 8);
   width: 60%;
   color: darkgoldenrod;
   text-shadow: 1px, 1px, 1px black;
   padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .rights {
@@ -59,4 +60,10 @@ li {
 }
 .socialMediaLogo {
   font-size: 30px;
+}
+.list {
+  /* background-color: aqua; */
+
+  width: 33%;
+  padding: 2rem;
 }

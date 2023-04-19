@@ -21,22 +21,22 @@ function Footer() {
         </div>
       </div>
       <div className={styled.links}>
-        <ul>
-          <b>Healthy Living</b>
+        <ul className={styled.list}>
+          <h3>Healthy Living</h3>
           <li>Lorem </li>
           <li>Lorem ipsum</li>
           <li>Lorem</li>
           <li>Lorem</li>
         </ul>
-        <ul>
-          <b>Services</b>
+        <ul className={styled.list}>
+          <h3>Services</h3>
           <li>Lorem ipsum</li>
           <li>Lorem</li>
           <li>Lorem ipsum</li>
           <li>Lorem</li>
         </ul>
-        <ul>
-          <b>Programs</b>
+        <ul className={styled.list}>
+          <h3>Programs</h3>
           <li>Lorem ipsum</li>
           <li>Lorem</li>
           <li>Lorem</li>
