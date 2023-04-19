@@ -1,5 +1,5 @@
 .footer {
-  height: 20vh;
+  height: max-content;
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -15,8 +15,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgba(250, 0, 0, 0.603); */
-  /* gap: 20rem; */
   color: rgb(8, 8, 8);
   width: 60%;
   color: darkgoldenrod;
@@ -62,8 +60,6 @@ li {
   font-size: 30px;
 }
 .list {
-  /* background-color: aqua; */
-
   width: 33%;
   padding: 2rem;
 }
