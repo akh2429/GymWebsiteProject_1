@@ -12,35 +12,38 @@ const Login = () => {
   const [userList, setUserList] = useState([]);
   const navigate = useNavigate();
   const handleClick = (e) => {
-    const userFind = userList.find(
-      (person) => person.username === username && person.password === password
-    );
-
     e.preventDefault();
-    // console.log("btnclick")
-    // console.log(userList)
-    if (username === "" && password === "") {
+    if (userList === null) {
       setError(true);
-      setErrorTxt("*Input field cant't be blank");
-    } else if (username.length <= 2) {
-      setError(true);
-      setErrorTxt("*username must be atleast 3 characters");
-    } else if (password.length < 6) {
-      setError(true);
-      setErrorTxt("*Password must be atleast 6 characters");
-    } else if (userFind !== undefined) {
-      setError(false);
-      setErrorTxt("");
-      alert(`${userFind.username} Login Successfully`);
-      navigate("/");
-      setUserName("");
-      setPassword("");
+      setErrorTxt("*Invalid Credentials");
+      return;
     } else {
-      alert("Invalid Crediantials");
-      setUserName("");
-      setPassword("");
+      const userFind = userList.find(
+        (person) => person.username === username && person.password === password
+      );
+      if (username === "" && password === "") {
+        setError(true);
+        setErrorTxt("*Input field cant't be blank");
+      } else if (username.length <= 2) {
+        setError(true);
+        setErrorTxt("*username must be atleast 3 characters");
+      } else if (password.length < 6) {
+        setError(true);
+        setErrorTxt("*Password must be atleast 6 characters");
+      } else if (userFind !== undefined) {
+        setError(false);
+        setErrorTxt("");
+        alert(`${userFind.username} Login Successfully`);
+        navigate("/");
+        setUserName("");
+        setPassword("");
+      } else if (userFind === undefined) {
+        setError(true);
+        setErrorTxt("*Please register yourself");
+      }
     }
   };
+
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("userData"));
     // console.log(data);
@@ -77,8 +80,17 @@ const Login = () => {
           <div>
             <small>
               {error ? (
-                <strong style={{ color: "red" }}>{errorTxt}</strong>
-              ) : null}
+                <strong
+                  style={{
+                    color: "yellow",
+                    textShadow: "0.1px 0.2px 0.3px black",
+                  }}
+                >
+                  {errorTxt}
+                </strong>
+              ) : (
+                ""
+              )}
             </small>
           </div>
           <div className={styled.btnContainer}>
