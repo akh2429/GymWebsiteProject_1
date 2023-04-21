@@ -19,7 +19,7 @@ const Program = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [image, headings]);
+  }, [image, headings, img.length, heading.length]);
 
   return (
     <div className={style.box}>

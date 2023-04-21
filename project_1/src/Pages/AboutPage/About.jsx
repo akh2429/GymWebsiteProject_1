@@ -1,18 +1,19 @@
 import React from 'react'
 import style from "./About.module.css"
+import Button from '../../components/Button/Button'
 
 const About = () => {
   return (
     <div className={style.mainContainer}>
       <div className={style.Container1}>
         <div className={style.video}>
-          <iframe   className={style.iframe} width="520" height="250" src="https://www.youtube.com/embed/lDECBe_lphU?mute=1&autoplay=1&loop=1&playlist=lDECBe_lphU" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          <iframe className={style.iframe} width="520" height="250" src="https://www.youtube.com/embed/lDECBe_lphU?mute=1&autoplay=1&loop=1&playlist=lDECBe_lphU" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div>
+        <div className={style.box}>
           <h1 className={style.h1}>About Us</h1>
-          <p className={style.box}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolor animi repellendus corporis ea facilis et repellat! Nostrum voluptates expedita veniam odit quia! Vel maxime dignissimos temporibus, vitae praesentium qui.
-          </p>
-          <button className={style.btn}>Learn More</button>
+          <span >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolor animi repellendus corporis ea facilis et repellat! Nostrum voluptates expedita veniam odit quia! Vel maxime dignissimos temporibus, vitae praesentium qui.
+          </span>
+          <Button btnName="More"/>
         </div>
       </div>
       <div className={style.Container2}>

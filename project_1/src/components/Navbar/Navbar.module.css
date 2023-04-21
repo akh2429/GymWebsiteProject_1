@@ -1,3 +1,9 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 
 .navbar_container {

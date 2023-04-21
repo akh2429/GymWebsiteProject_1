@@ -1,7 +1,7 @@
 .cardContainer{
     margin-top: 10rem;
-    height: 480px;
-    width: 350px;
+    height: 68vh;
+    width: 20vw;
     background-color: transparent;
     border: 4px solid #fff;
     display: flex;
@@ -12,6 +12,8 @@
     transition: transform 0.5s ease;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
 .cardContainer:hover{
     transition: transform 0.5s ease;
     transform: scale(1.1);
@@ -66,9 +68,8 @@ font-size: medium;
     text-shadow: 0.9px 0.1px 0.1px rgb(0, 0, 0);
 }
 .btnContainer{
-    margin-top: 2.5rem;
-    height: 70px;
-    width: auto;
-    margin-left: 2rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
 }

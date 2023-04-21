@@ -12,18 +12,12 @@ const ncard=(elem) => {
 }
 
 const Pricing=()=> {
-
-  return(
+ return(
  <div className={styled.mainContainer}>
-
-    <div className={styled.cards}>
-
-    {cardData.map(ncard)}
-    </div>
-    
-   </div>
-
-    
-  )
+ <div className={styled.cards}>
+ {cardData.map(ncard)}
+ </div>
+ </div> 
+ )
 }
-export default Pricing
+export default Pricing;

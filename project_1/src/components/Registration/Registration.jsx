@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import styled from "./Registration.module.css";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { FaUserAlt,FaUserCheck,FaLock } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { Link,useNavigate } from "react-router-dom";
+
+
 const Registration = () => {
   const [fname, setFname] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [userData, setUserData] = useState([]);
-
   const [error, setError] = useState(false);
   const [errorTxt, setErrorTxt] = useState("");
-
+  const navigate = useNavigate()
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
   function isEmail(str) {
     return str.match(pattern);
   }
@@ -31,7 +34,7 @@ const Registration = () => {
     } else if (username.length <= 4) {
       setError(true);
       setErrorTxt("*Username contains atleast 5 Characters");
-    } else if (email && isEmail(email) === null) {
+    } else if (isEmail(email) === null) {
       setError(true);
       setErrorTxt("*Invalid email");
     } else if (password.length < 6) {
@@ -47,9 +50,7 @@ const Registration = () => {
         email: email,
         password: password,
       };
-
-      userData.push(userInfo);
-      //console.log(userData)
+      userData.push(userInfo)
       setFname("");
       setUserName("");
       setEmail("");
@@ -58,9 +59,9 @@ const Registration = () => {
       localStorage.setItem("userData", JSON.stringify(userData));
       console.log(userData);
       alert(`Welcome ${fname} , Registration Successfully `);
+      navigate("/login")
     }
 
-    //className={styled.mainContainer}
   };
   return (
     <div className={styled.mainContainer}>
@@ -68,43 +69,51 @@ const Registration = () => {
         <h2>JoinUs Now</h2>
         <form action="" onSubmit={handleFormSubmit}>
           <div className={styled.inputField}>
-            <label htmlFor="fname">Full Name </label>
+            <div className={styled.iconDiv}>
+            <div  ><FaUserAlt className={styled.icon}/></div>
             <InputField
               type="text"
               placeholder="Enter Full Name"
               value={fname}
               onChange={(e) => setFname(e.target.value)}
             />
+            </div>
           </div>
 
           <div className={styled.inputField}>
-            <label htmlFor="username">Username </label>
+            <div className={styled.iconDiv}>
+            <div className={styled.icon}><FaUserCheck/></div>
             <InputField
               type="text"
               placeholder="Enter Username"
               value={username}
               onChange={(e) => setUserName(e.target.value)}
             />
+            </div>
           </div>
 
           <div className={styled.inputField}>
-            <label htmlFor="email">Email </label>
+            <div className={styled.iconDiv}>
+            <div className={styled.icon}><MdEmail/></div>
             <InputField
               type="email"
               placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            </div>
           </div>
 
           <div className={styled.inputField}>
-            <label htmlFor="password">Password </label>
+            <div className={styled.iconDiv}>
+            <div className={styled.icon}><FaLock/></div>
             <InputField
               type="password"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            </div>
           </div>
           <small>
             {error ? (
@@ -119,7 +128,7 @@ const Registration = () => {
             ) : null}
           </small>
           <div className={styled.btnContainer}>
-            <Button btnName="SignUp" />
+            <Button btnName="SignUp"/>
           </div>
         </form>
         <div className={styled.switch}>

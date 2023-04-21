@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { FaLock } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import styled from "./Login.module.css";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
+
 const Login = () => {
-  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [errorTxt, setErrorTxt] = useState("");
   const [userList, setUserList] = useState([]);
   const navigate = useNavigate();
+
+  const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
+  function isEmail(str) {
+    return str.match(pattern);
+  }
+
   const handleClick = (e) => {
     e.preventDefault();
     if (userList === null) {
@@ -19,14 +30,14 @@ const Login = () => {
       return;
     } else {
       const userFind = userList.find(
-        (person) => person.username === username && person.password === password
+        (person) => person.email === email && person.password === password
       );
-      if (username === "" && password === "") {
+      if (email === "" && password === "") {
         setError(true);
         setErrorTxt("*Input field cant't be blank");
-      } else if (username.length <= 2) {
+      } else if (isEmail(email) === null) {
         setError(true);
-        setErrorTxt("*username must be atleast 3 characters");
+        setErrorTxt("*Invalid email");
       } else if (password.length < 6) {
         setError(true);
         setErrorTxt("*Password must be atleast 6 characters");
@@ -35,7 +46,7 @@ const Login = () => {
         setErrorTxt("");
         alert(`${userFind.username} Login Successfully`);
         navigate("/");
-        setUserName("");
+        setEmail("");
         setPassword("");
       } else if (userFind === undefined) {
         setError(true);
@@ -46,7 +57,6 @@ const Login = () => {
 
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("userData"));
-    // console.log(data);
     setUserList(data);
   }, []);
 
@@ -59,22 +69,26 @@ const Login = () => {
         <h2>Login Now</h2>
         <form action="">
           <div className={styled.inputField}>
-            <label htmlFor="username"> Username </label>
+            <div className={styled.iconDiv}>
+            <div className={styled.icon}><MdEmail/></div>
             <InputField
               type="text"
-              placeholder="Enter Username"
-              value={username}
-              onChange={(e) => setUserName(e.target.value)}
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
+            </div>
           </div>
           <div className={styled.inputField}>
-            <label htmlFor="password"> Password </label>
+            <div className={styled.iconDiv}>
+            <div className={styled.icon}><FaLock/></div>
             <InputField
               type="password"
               placeholder="Enter Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            </div>
           </div>
 
           <div>

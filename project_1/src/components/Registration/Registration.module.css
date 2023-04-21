@@ -6,19 +6,19 @@
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.9;
-    /* background-attachment: fixed; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .formContainer{
     margin-top: 15vh;
-    height: 560px;
+    height: 500px;
     width: 500px;
     border: 5px solid #FFFFFF;
     border-radius: 12px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
     align-items: center;
     flex-direction: column;
 }
@@ -30,12 +30,13 @@
 .inputField {
     margin-top: 15px;
     height: auto;
-  width: auto;
-    align-items: center;
+    width: auto;
     text-align: center;
 }
 .btnContainer{
-    margin-left: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 label{
     font-size: 20px;
@@ -51,4 +52,19 @@ label{
 .login{
     font-weight: 900;
     color: #C62828;
+}
+
+.iconDiv{
+    border-bottom: 2.5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    height: 7vh;
+    gap: 1rem;
+}
+
+.icon{
+    font-size: 1.2rem;
+    color: white;
 }
