@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import styled from "./Registration.module.css";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
-import { FaUserAlt,FaUserCheck,FaLock } from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import { Link,useNavigate } from "react-router-dom";
-
+import { FaUserAlt, FaUserCheck, FaLock } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [fname, setFname] = useState("");
@@ -15,9 +14,10 @@ const Registration = () => {
   const [userData, setUserData] = useState([]);
   const [error, setError] = useState(false);
   const [errorTxt, setErrorTxt] = useState("");
-  const navigate = useNavigate()
+  const oldData = JSON.parse(localStorage.getItem("userData")) || [];
+  const navigate = useNavigate();
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
+
   function isEmail(str) {
     return str.match(pattern);
   }
@@ -41,27 +41,34 @@ const Registration = () => {
       setError(true);
       setErrorTxt("*Password contains atleast 6 characters");
     } else {
-      setError(false);
-      setErrorTxt("");
+      if (oldData.find((val) => val.email === email)) {
+        alert(`User ${email} already registered`);
+        setFname("");
+        setUserName("");
+        setEmail("");
+        setPassword("");
+      } else {
+        setError(false);
+        setErrorTxt("");
 
-      const userInfo = {
-        fname: fname,
-        username: username,
-        email: email,
-        password: password,
-      };
-      userData.push(userInfo)
-      setFname("");
-      setUserName("");
-      setEmail("");
-      setPassword("");
+        const userInfo = {
+          fname: fname,
+          username: username,
+          email: email,
+          password: password,
+        };
+        const updatedUsers = [...oldData, userInfo];
+        setFname("");
+        setUserName("");
+        setEmail("");
+        setPassword("");
 
-      localStorage.setItem("userData", JSON.stringify(userData));
-      console.log(userData);
-      alert(`Welcome ${fname} , Registration Successfully `);
-      navigate("/login")
+        localStorage.setItem("userData", JSON.stringify(updatedUsers));
+        console.log(userData);
+        alert(`Welcome ${fname} , Registration Successfully `);
+        navigate("/login");
+      }
     }
-
   };
   return (
     <div className={styled.mainContainer}>
@@ -70,49 +77,57 @@ const Registration = () => {
         <form action="" onSubmit={handleFormSubmit}>
           <div className={styled.inputField}>
             <div className={styled.iconDiv}>
-            <div  ><FaUserAlt className={styled.icon}/></div>
-            <InputField
-              type="text"
-              placeholder="Enter Full Name"
-              value={fname}
-              onChange={(e) => setFname(e.target.value)}
-            />
+              <div>
+                <FaUserAlt className={styled.icon} />
+              </div>
+              <InputField
+                type="text"
+                placeholder="Enter Full Name"
+                value={fname}
+                onChange={(e) => setFname(e.target.value)}
+              />
             </div>
           </div>
 
           <div className={styled.inputField}>
             <div className={styled.iconDiv}>
-            <div className={styled.icon}><FaUserCheck/></div>
-            <InputField
-              type="text"
-              placeholder="Enter Username"
-              value={username}
-              onChange={(e) => setUserName(e.target.value)}
-            />
+              <div className={styled.icon}>
+                <FaUserCheck />
+              </div>
+              <InputField
+                type="text"
+                placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </div>
           </div>
 
           <div className={styled.inputField}>
             <div className={styled.iconDiv}>
-            <div className={styled.icon}><MdEmail/></div>
-            <InputField
-              type="email"
-              placeholder="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+              <div className={styled.icon}>
+                <MdEmail />
+              </div>
+              <InputField
+                type="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
           </div>
 
           <div className={styled.inputField}>
             <div className={styled.iconDiv}>
-            <div className={styled.icon}><FaLock/></div>
-            <InputField
-              type="password"
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              <div className={styled.icon}>
+                <FaLock />
+              </div>
+              <InputField
+                type="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
           </div>
           <small>
@@ -128,7 +143,7 @@ const Registration = () => {
             ) : null}
           </small>
           <div className={styled.btnContainer}>
-            <Button btnName="SignUp"/>
+            <Button btnName="SignUp" />
           </div>
         </form>
         <div className={styled.switch}>
