@@ -1,19 +1,29 @@
-import React from 'react'
-import style from "./About.module.css"
-import Button from '../../components/Button/Button'
+import React from "react";
+import style from "./About.module.css";
+import Button from "../../components/Button/Button";
+import ReactPlayer from "react-player/youtube";
 
 const About = () => {
   return (
     <div className={style.mainContainer}>
       <div className={style.Container1}>
         <div className={style.video}>
-          <iframe className={style.iframe} width="520" height="250" src="https://www.youtube.com/embed/lDECBe_lphU?mute=1&autoplay=1&loop=1&playlist=lDECBe_lphU" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          <ReactPlayer
+            url="https://www.youtube.com/embed/lDECBe_lphU?mute=1&autoplay=1&loop=1&playlist=lDECBe_lphU"
+            width="520px"
+            height="250px"
+            controls={true}
+          />{" "}
         </div>
         <div className={style.box}>
           <h1 className={style.h1}>About Us</h1>
-          <span >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolor animi repellendus corporis ea facilis et repellat! Nostrum voluptates expedita veniam odit quia! Vel maxime dignissimos temporibus, vitae praesentium qui.
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex dolor
+            animi repellendus corporis ea facilis et repellat! Nostrum
+            voluptates expedita veniam odit quia! Vel maxime dignissimos
+            temporibus, vitae praesentium qui.
           </span>
-          <Button btnName="More"/>
+          <Button btnName="More" />
         </div>
       </div>
       <div className={style.Container2}>
@@ -22,16 +32,25 @@ const About = () => {
           <ul>
             <li className={style.points}>Consultation With Expert</li>
             <ol>
-              <li className={style.pointsDec}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+              <li className={style.pointsDec}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              </li>
             </ol>
             <li className={style.points}>Best Work Facilities</li>
             <ol>
-              <li className={style.pointsDec}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+              <li className={style.pointsDec}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              </li>
             </ol>
           </ul>
         </div>
         <div className={style.video}>
-          <iframe  className={style.iframe} width="520" height="250" src="https://www.youtube.com/embed/fgxZM-44FzA?mute=1&autoplay=1&loop=1&playlist=fgxZM-44FzA" title="YouTube video player" frameborder="0" allowfullscreen controlled></iframe>
+          <ReactPlayer
+            url="https://www.youtube.com/embed/fgxZM-44FzA?mute=1&autoplay=1&loop=1&playlist=fgxZM-44FzA"
+            width="520px"
+            height="250px"
+            controls={true}
+          />
           {/* <video controls autoplay muted>
             <source src="https://www.youtube.com/embed/fgxZM-44FzA" type="video/mp4" />
             <p>Sorry, your broswer doesn't support embedded videos.</p>
@@ -39,7 +58,7 @@ const About = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default About;
